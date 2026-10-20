@@ -1,0 +1,76 @@
+curl commands — the everyday set from "curl for Mere Mortals"
+=============================================================
+
+Every output quoted in the guide was captured
+from curl 8.5.0, mostly against the lab server
+in this directory (echo_server.py, ports 8901
+and 8902). B=http://127.0.0.1:8901 below.
+
+
+LOOKING
+-------
+    curl --version                which curl this is
+    curl $B/hello                 fetch a URL, body to stdout
+    curl -i $B/hello              headers and body together
+    curl -I $B/hello              headers only (a HEAD request)
+    curl -s $B/json               silent: no progress meter
+    curl -sS URL                  silent, but errors still speak
+    curl -D head.txt -o body.txt URL   headers and body to separate files
+    curl -o /dev/null -w '%{http_code}\n' URL   just the status code
+
+
+WATCHING
+--------
+    curl -v $B/hello              the whole conversation, annotated
+    curl --trace-ascii trace.txt $B/hello   the same, kept in a file
+    curl --trace trace.txt $B/hello         with hex, for binary trouble
+
+
+SENDING
+-------
+    curl -d 'name=specimen&count=2' $B/echo     a form POST
+    curl --data-urlencode 'name=A B & C' $B/echo   encoded for you
+    curl -d @payload.json -H 'Content-Type: application/json' $B/echo
+    curl -F 'note=@upload.txt' -F 'kind=specimen' $B/echo   a file upload
+    curl -X PUT -d 'replaced=true' $B/echo      a named method
+    curl -G --data-urlencode 'q=a b' $B/json    data as a query string
+
+
+AUTHENTICATION
+--------------
+    curl -u paul:specimen-pass $B/protected     basic auth (see ch. 5 first)
+    curl -H 'Authorization: Bearer TOKEN' $B/protected
+    curl -K lab-curlrc $B/protected            credentials in a 0600 file
+
+
+DOWNLOADING
+-----------
+    curl -O $B/file.bin           save under the URL's file name
+    curl -o name.bin $B/file.bin  save under your name
+    curl -L $B/redirect           follow redirects
+    curl -C - -o file.bin $B/file.bin   resume an interrupted download
+    curl -f -O URL                fail (exit 22) instead of saving an error page
+
+
+COOKIES
+-------
+    curl -c jar.txt $B/set-cookie   save cookies the server sets
+    curl -b jar.txt $B/whoami       send the jar's cookies back
+    curl -b 'session=...' $B/whoami a cookie value, inline
+
+
+TLS
+---
+    curl https://127.0.0.1:8902/hello        verification on (the default)
+    curl --cacert lab-tls/cert.pem https://127.0.0.1:8902/hello
+    curl -k https://...             verification OFF (last resort, ch. 8)
+
+
+SCRIPTS
+-------
+    curl -f --max-time 10 URL           a deadline, and failure as an exit code
+    curl --retry 5 --retry-delay 1 -f URL   ride out a flaky server
+        exit 0   it worked          exit 22  HTTP error status
+        exit 3   bad URL            exit 28  timeout
+        exit 6   couldn't resolve   exit 60  certificate problem
+        exit 7   couldn't connect

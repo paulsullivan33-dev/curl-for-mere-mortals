@@ -1,0 +1,2 @@
+A specimen file for upload practice.
+It contains nothing but these two lines.

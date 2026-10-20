@@ -1,0 +1,23 @@
+site_name: curl for Mere Mortals
+site_description: Plain-language curl. Reading replies whole, sending data in its three encodings, credentials without the leaks, downloads that survive interruption, and scripts with deadlines and honest exit codes, all against a local lab server that reports what it received.
+site_url: https://paulsullivan33-dev.github.io/curl-for-mere-mortals/
+
+# Guides live at the repo root (nice for GitHub browsing).
+# The deploy workflow copies them into docs/ before building.
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - What curl Is: what-curl-is.md
+  - Reading What Came Back: reading-responses.md
+  - Watching the Conversation: watching-the-conversation.md
+  - Sending Data: sending-data.md
+  - Authentication: authentication.md
+  - Downloading Files: downloading-files.md
+  - Cookies: cookies.md
+  - TLS: tls.md
+  - Timeouts, Retries, and Exit Codes: timeouts-retries-and-exit-codes.md
+  - Recipes: recipes.md
+  - Glossary: glossary.md
+  - Writing Criteria: criteria.md
