@@ -118,3 +118,19 @@ Keep the lab afterward — its `/status`,
 `/flaky`, and `/slow` endpoints are a
 standing rehearsal for the day a real
 service misbehaves in the same three ways.
+
+---
+
+## Part of the series
+
+This guide is one of the [For Mere Mortals](https://paulsullivan33-dev.github.io/mere-mortals/) guides: plain-language guides to the tools programmers and makers use.
+
+Related guides:
+
+- [APIs for Mere Mortals](https://paulsullivan33-dev.github.io/api-for-mere-mortals/)
+- [jq for Mere Mortals](https://paulsullivan33-dev.github.io/jq-for-mere-mortals/)
+- [Netcat for Mere Mortals](https://paulsullivan33-dev.github.io/netcat-for-mere-mortals/)
+
+## License
+
+The writing in this guide is licensed under [CC BY 4.0](https://github.com/paulsullivan33-dev/curl-for-mere-mortals/blob/main/LICENSE). Code examples and lab scripts are licensed under the [MIT License](https://github.com/paulsullivan33-dev/curl-for-mere-mortals/blob/main/LICENSE-CODE).

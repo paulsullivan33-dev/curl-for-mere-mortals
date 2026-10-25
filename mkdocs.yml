@@ -1,6 +1,7 @@
 site_name: curl for Mere Mortals
 site_description: Plain-language curl. Reading replies whole, sending data in its three encodings, credentials without the leaks, downloads that survive interruption, and scripts with deadlines and honest exit codes, all against a local lab server that reports what it received.
 site_url: https://paulsullivan33-dev.github.io/curl-for-mere-mortals/
+copyright: 'Part of <a href="https://paulsullivan33-dev.github.io/mere-mortals/">For Mere Mortals</a> · Text <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, code MIT'
 
 # Guides live at the repo root (nice for GitHub browsing).
 # The deploy workflow copies them into docs/ before building.
